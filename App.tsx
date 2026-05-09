@@ -14,6 +14,7 @@ import Giving from "./pages/Giving";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Testimonies from "./pages/Testimonies";
+import Store from "./pages/Store";
 import { Menu, X } from "lucide-react";
 import { Link } from "wouter";
 
@@ -32,6 +33,7 @@ function Navigation() {
     { href: "/prayer", label: "Prayer" },
     { href: "/giving", label: "Give" },
     { href: "/gallery", label: "Gallery" },
+    { href: "/store", label: "Store" },
     { href: "/contact", label: "Contact" },
   ];
 
@@ -128,6 +130,7 @@ function Footer() {
               <li><Link href="/about"><button className="hover:text-white">About Us</button></Link></li>
               <li><Link href="/sermons"><button className="hover:text-white">Sermons</button></Link></li>
               <li><Link href="/events"><button className="hover:text-white">Events</button></Link></li>
+              <li><Link href="/store"><button className="hover:text-white">Store</button></Link></li>
               <li><Link href="/contact"><button className="hover:text-white">Contact</button></Link></li>
             </ul>
           </div>
@@ -200,6 +203,7 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/gallery" component={Gallery} />
       <Route path="/testimonies" component={Testimonies} />
+      <Route path="/store" component={Store} />
       <Route path="/404" component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

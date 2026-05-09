@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { ChevronRight, Calendar, Music, Heart, Gift } from "lucide-react";
+import { ChevronRight, Calendar, Music, Heart, Gift, ShoppingBag } from "lucide-react";
 import { trpc } from "@/lib/trpc";
 import { Link } from "wouter";
 
@@ -124,7 +124,7 @@ export default function Home() {
       {/* Quick Actions */}
       <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             <Link href="/sermons">
               <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
                 <Music className="w-12 h-12 mx-auto mb-4 text-[#0088CC]" />
@@ -154,6 +154,14 @@ export default function Home() {
                 <Gift className="w-12 h-12 mx-auto mb-4 text-[#FF6600]" />
                 <h3 className="font-bold text-lg mb-2">Give</h3>
                 <p className="text-sm text-gray-600">Support the ministry</p>
+              </Card>
+            </Link>
+
+            <Link href="/store">
+              <Card className="p-6 text-center hover:shadow-lg transition-shadow cursor-pointer">
+                <ShoppingBag className="w-12 h-12 mx-auto mb-4 text-[#0088CC]" />
+                <h3 className="font-bold text-lg mb-2">Store</h3>
+                <p className="text-sm text-gray-600">Spiritual items & oil</p>
               </Card>
             </Link>
           </div>
