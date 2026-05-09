@@ -76,12 +76,13 @@ export default function Contact() {
                   <div className="flex items-start">
                     <Clock className="w-6 h-6 text-[#FF6600] mr-4 mt-1 flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold text-lg mb-2">Office Hours</h3>
+                      <h3 className="font-bold text-lg mb-2">Service Schedule</h3>
                       <div className="text-gray-700 text-sm space-y-1">
-                        <p><span className="font-semibold">Sunday:</span> 8:00 AM - 2:00 PM (Service)</p>
-                        <p><span className="font-semibold">Wednesday:</span> 6:00 PM - 8:00 PM (Midweek Service)</p>
-                        <p><span className="font-semibold">Friday:</span> 6:00 PM - 8:00 PM (Prayer Night)</p>
-                        <p><span className="font-semibold">Other Days:</span> 9:00 AM - 5:00 PM</p>
+                        <p><span className="font-semibold">Tuesdays:</span> Prophetic Service (10:00 AM - 12:00 PM)</p>
+                        <p><span className="font-semibold">Thursdays:</span> Faith Clinic (10:00 AM - 12:00 PM)</p>
+                        <p><span className="font-semibold">Saturdays:</span> Choir/Drama Rehearsal (10:00 AM - 12:00 PM)</p>
+                        <p><span className="font-semibold">Sunday School:</span> 9:00 AM - 9:55 AM</p>
+                        <p><span className="font-semibold">Sunday Thanksgiving:</span> 10:00 AM - 12:30 PM</p>
                       </div>
                     </div>
                   </div>
@@ -171,16 +172,24 @@ export default function Contact() {
                 <h3 className="font-bold text-[#0088CC] mb-4">Service Times</h3>
                 <div className="space-y-3 text-sm text-gray-700">
                   <div>
-                    <p className="font-semibold">Sunday Service</p>
-                    <p>8:00 AM - 2:00 PM</p>
+                    <p className="font-semibold">Tuesdays: Prophetic Service</p>
+                    <p>10:00 AM - 12:00 PM</p>
                   </div>
                   <div>
-                    <p className="font-semibold">Midweek Service</p>
-                    <p>Wednesday 6:00 PM - 8:00 PM</p>
+                    <p className="font-semibold">Thursdays: Faith Clinic</p>
+                    <p>10:00 AM - 12:00 PM</p>
                   </div>
                   <div>
-                    <p className="font-semibold">Prayer Night</p>
-                    <p>Friday 6:00 PM - 8:00 PM</p>
+                    <p className="font-semibold">Saturdays: Choir/Drama Rehearsal</p>
+                    <p>10:00 AM - 12:00 PM</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Sunday School</p>
+                    <p>9:00 AM - 9:55 AM</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold">Sunday Thanksgiving Service</p>
+                    <p>10:00 AM - 12:30 PM</p>
                   </div>
                 </div>
               </Card>

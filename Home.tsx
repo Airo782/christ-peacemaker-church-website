@@ -33,9 +33,10 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold mb-4 font-serif">
               Christ the Peacemaker Church of All Nations – C&S Movement Church (City of Peace)
             </h1>
-            <p className="text-lg md:text-xl mb-8 opacity-90">
-              "For God so loved the world..." - John 3:16
-            </p>
+            <div className="text-lg md:text-xl mb-8 opacity-90 space-y-2">
+              <p>"For God so loved the world..." - John 3:16</p>
+              <p>"I have told you these things, so that in me you may have peace. In this world you will have trouble. But take heart! I have overcome the world." - John 16:33</p>
+            </div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
