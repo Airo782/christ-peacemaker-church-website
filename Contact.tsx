@@ -97,8 +97,19 @@ export default function Contact() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="bg-[#0088CC] text-white p-3 rounded-full hover:bg-[#0088CC]/90 transition"
+                      title="Facebook Page"
                     >
                       <Facebook className="w-5 h-5" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/share/18pLm2jPuL/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#0088CC] text-white p-3 rounded-full hover:bg-[#0088CC]/90 transition flex items-center gap-1"
+                      title="Facebook Group"
+                    >
+                      <Facebook className="w-5 h-5" />
+                      <span className="text-xs font-bold pr-1">Group</span>
                     </a>
                     <a
                       href="https://instagram.com"

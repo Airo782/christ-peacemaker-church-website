@@ -45,6 +45,13 @@ export default function Home() {
               >
                 ▶ Watch Live on Facebook
               </Button>
+              <Button
+                size="lg"
+                className="bg-white text-[#0088CC] hover:bg-gray-100 font-bold"
+                onClick={() => window.open("https://www.facebook.com/share/18pLm2jPuL/", "_blank")}
+              >
+                👥 Join Our Facebook Group
+              </Button>
               <Link href="/about">
                 <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
                   Learn More <ChevronRight className="ml-2 w-5 h-5" />
