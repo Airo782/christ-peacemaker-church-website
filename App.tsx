@@ -43,7 +43,7 @@ function Navigation() {
           <Link href="/">
             <div className="flex items-center cursor-pointer">
               <img
-                src="/manus-storage/church-logo_194e659e.jpg"
+                src="/logo.jpg"
                 alt="Church Logo"
                 className="h-16 w-auto"
               />
