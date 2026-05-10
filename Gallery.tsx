@@ -12,10 +12,26 @@ export default function Gallery() {
 
   const { data: galleryData } = trpc.gallery.list.useQuery();
 
+  // Default static images if database is empty
+  const staticImages = [
+    {
+      id: "static-1",
+      imageUrl: "/gallery/leader.jpg",
+      title: "Church Leadership",
+      category: "Leadership",
+      description: "Prophet Akinjimi Johnson leading the congregation."
+    }
+  ];
+
   useEffect(() => {
-    if (galleryData) {
+    if (galleryData && galleryData.length > 0) {
       setImages(galleryData);
       const uniqueCategories = Array.from(new Set(galleryData.map((img: any) => img.category).filter(Boolean)));
+      setCategories(uniqueCategories as string[]);
+    } else {
+      // Fallback to static images if no data from DB
+      setImages(staticImages);
+      const uniqueCategories = Array.from(new Set(staticImages.map((img: any) => img.category).filter(Boolean)));
       setCategories(uniqueCategories as string[]);
     }
   }, [galleryData]);
@@ -75,11 +91,11 @@ export default function Gallery() {
                   <img
                     src={image.imageUrl}
                     alt={image.title || "Gallery image"}
-                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors flex items-end">
                     <div className="w-full p-4 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                      {image.title && <p className="font-semibold">{image.title}</p>}
+                      {image.title && <p className="font-semibold text-lg">{image.title}</p>}
                       {image.category && <p className="text-sm opacity-90">{image.category}</p>}
                     </div>
                   </div>
@@ -92,23 +108,23 @@ export default function Gallery() {
 
       {/* Lightbox Modal */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-4xl w-full">
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4" onClick={() => setSelectedImage(null)}>
+          <div className="relative max-w-4xl w-full" onClick={(e) => e.stopPropagation()}>
             <button
               onClick={() => setSelectedImage(null)}
-              className="absolute -top-10 right-0 text-white hover:text-gray-300"
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors"
             >
-              <X className="w-8 h-8" />
+              <X className="w-10 h-10" />
             </button>
             <img
               src={selectedImage.imageUrl}
               alt={selectedImage.title || "Gallery image"}
-              className="w-full h-auto rounded-lg"
+              className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
             />
             {(selectedImage.title || selectedImage.description) && (
-              <div className="mt-4 text-white">
-                {selectedImage.title && <h3 className="text-xl font-bold font-serif">{selectedImage.title}</h3>}
-                {selectedImage.description && <p className="text-gray-300 mt-2">{selectedImage.description}</p>}
+              <div className="mt-6 text-white text-center">
+                {selectedImage.title && <h3 className="text-2xl font-bold font-serif mb-2">{selectedImage.title}</h3>}
+                {selectedImage.description && <p className="text-gray-300 text-lg">{selectedImage.description}</p>}
               </div>
             )}
           </div>
